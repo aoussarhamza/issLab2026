@@ -17,3 +17,5 @@
  ### Sistema ConwayLife con pagine HTML
  * [ConwayLife Sprint3(ConwayLife/Sprint3/conway26Java): evoluzione del sistema in locale
    usando una pagina HTML come dispositivo di I/O. <i>Distribuzione</i>: Docker yaml.
+
+ [index:](https://aoussar.github.io/issLab2026/docs/index.html)

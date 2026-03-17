@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sprint 3 - Conway Game of Life</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #eef1f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            color: #2c2c2c;
+            line-height: 1.7;
+        }
+
+        P { margin: 0.6em 0; }
+
+        #top {
+            background: linear-gradient(135deg, #1e3a6e 0%, #3a6bc7 100%);
+            padding: 28px 50px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+        }
+
+        #top h1 {
+            color: #ffffff !important;
+            background-color: transparent !important;
+            border: none;
+            padding: 0;
+            margin: 0;
+            font-size: 1.6em;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+            border-radius: 0 !important;
+        }
+
+        div.body {
+            max-width: 980px;
+            margin: 30px auto;
+            padding: 35px 50px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+            font-size: 16px;
+        }
+
+        a, a:visited, a:active, a:link {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: inherit;
+            background-color: transparent;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #1a44b8;
+            text-decoration: underline;
+            background-color: transparent;
+        }
+
+        h1, h2, h3, h4, h5 {
+            clear: left;
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+            border-radius: 7px;
+            line-height: 1.3;
+        }
+
+        h2 {
+            font-size: 1.25em;
+            background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+            color: #ffffff;
+            padding: 11px 18px;
+            margin-top: 35px;
+        }
+
+        img {
+            border: 1.5px solid #bae6fd;
+            border-radius: 5px;
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        div.req {
+            background-color: #f0fdf4;
+            font-size: 16px;
+            max-width: 800px;
+            border: 1.5px solid #4ade80;
+            border-left: 5px solid #16a34a;
+            padding: 18px 22px;
+            margin: 16px 0;
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+
+        div.remark {
+            background-color: #eff6ff;
+            border: 1.5px solid #bfdbfe;
+            border-left: 5px solid #2563eb;
+            padding: 16px 22px;
+            margin: 16px 0;
+            border-radius: 8px;
+        }
+
+        div.imagedesc { width: 85%; margin: auto; }
+
+        .nav-back {
+            display: block;
+            width: fit-content;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #bfdbfe;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.82em;
+            text-decoration: none;
+            transition: background 0.2s;
+            margin-bottom: 12px;
+        }
+
+        .nav-back:hover {
+            background: rgba(255,255,255,0.25);
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        div.footer {
+            background: linear-gradient(135deg, #1e3a6e 0%, #3a6bc7 100%);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 8px;
+            margin-top: 35px;
+            font-size: 0.9em;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+
+<body>
+<div id="top">
+    <a class="nav-back" href="index.html">&#8592; Torna all'indice</a>
+    <h1>LABORATORIO DI INGEGNERIA DEI SISTEMI SOFTWARE - Sprint 3</h1>
+</div>
+
+<div class="body">
+    <h2>Introduction</h2>
+    <p>
+        Realizzazione in Java del
+        <a href="https://anatali.github.io/issLab2026/_static/docs/Protobook.pdf#chapter.6" target="_blank">
+            <strong>GAME OF LIFE DI CONWAY</strong>
+        </a>
+    </p>
+
+    <h2>Requirements</h2>
+    <div class="req">
+        <ul>
+            <li>
+                R1: erogare il gioco come un "servizio" distribuibile mediante Docker, anticipando
+                la opportunita di realizzare la GUI del gioco come una pagina Web (HTML/JS).
+            </li>
+        </ul>
+    </div>
+
+    <h2>Requirement analysis</h2>
+    <div class="remark">
+        Riportiamo la architettura logica del sistema realizzato usando Java.
+        <div class="imagedesc">
+            <img src="./img/LifeGameJava.jpg" alt="Architettura logica sistema Java">
+        </div>
+        La introduzione di una pagina HTML cambia la natura del sistema, che diventa un sistema distribuito,
+        in quanto alla nostra applicazione si affianca un browser.
+    </div>
+
+    <h2>Problem analysis</h2>
+    <div class="imagedesc">
+        <img src="./img/javalin.jpg" alt="Diagramma problem analysis Sprint 3">
+    </div>
+
+    <h2>Test plans</h2>
+
+    <h2>Project</h2>
+
+    <h2>Testing</h2>
+
+    <h2>Deployment</h2>
+    <div class="remark">
+        Il deployment e effettuato creando un'immagine docker attraverso il seguente file:
+        <a href="https://docs.docker.com/reference/dockerfile/" target="_blank">Dockerfile</a>.
+        Successivamente l'immagine viene "eseguita" con il compose file in un network esterno:
+        <a href="https://docs.docker.com/compose/" target="_blank">docker-compose.yaml</a>.
+    </div>
+
+    <h2>Maintenance</h2>
+
+    <br><br>
+</div>
+
+<div class="footer">
+    By Hamza Aoussar &nbsp;&bull;&nbsp; email:
+    <a href="mailto:hamza.aoussar@studio.unibo.it" style="color:#bfdbfe">hamza.aoussar@studio.unibo.it</a>
+    &nbsp;&bull;&nbsp; GIT repo:
+    <a href="https://github.com/aoussarhamza/issLab2026.git" target="_blank" style="color:#bfdbfe">
+        github.com/aoussarhamza/issLab2026.git
+    </a>
+</div>
+
+</body>
+</html>
